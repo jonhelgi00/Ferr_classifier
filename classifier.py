@@ -14,6 +14,7 @@ class Ferritico_classifier():
     self.idx2cls = {0:'equation', 1:'graph', 2:'lewis'}
       
   def transform(self, image):
+    image = image.convert("RGB")
     transform_image = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406], 
@@ -41,6 +42,7 @@ class Ferritico_classifier():
     return model
   
 
-# if __name__ == '__main__':
-#   classifier = Ferritico_classifier('/Users/jonhelgi/Projects/Ferr_classifier/convnext_best_model.pt')
-#   print(classifier.classify('/Users/jonhelgi/Projects/Ferr_classifier/data/dataset/raw_img/google/calculus_equation/000001.png'))
+if __name__ == '__main__':
+  classifier = Ferritico_classifier('/Users/jonhelgi/Projects/Ferr_classifier/convnext_best_model.pt')
+  #print(classifier.classify('/Users/jonhelgi/Projects/Ferr_classifier/data/dataset/raw_img/google/calculus_equation/000001.png'))
+  print(classifier.classify('/Users/jonhelgi/Projects/Ferr_classifier/data/dataset/raw_img/combined/lewis_structure_diagram/google_000023.png'))
