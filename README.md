@@ -24,6 +24,14 @@ The network was trained in Google Colab for access to slightly more powerful com
 
 As the model was saved, it is too large to push to this github repository. 
 
+## Usage
+
+To try out the classifier, upload the model weights and png file into the source directory and run (e.g. in main function of `classifier.py`)
+- classifier = Ferritico_classifier('convnext_best_model.pt')
+- print(classifier.classify('path_to_image.png'))
+
+The repository contains an `environment.yaml` file in case of dependency issues
+
 <!-- Learning rate: 0.001
 Augmentation: True
 Training last conv: True -->

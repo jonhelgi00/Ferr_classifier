@@ -43,6 +43,7 @@ class Ferritico_classifier():
   
 
 if __name__ == '__main__':
-  classifier = Ferritico_classifier('/Users/jonhelgi/Projects/Ferr_classifier/convnext_best_model.pt')
-  #print(classifier.classify('/Users/jonhelgi/Projects/Ferr_classifier/data/dataset/raw_img/google/calculus_equation/000001.png'))
-  print(classifier.classify('/Users/jonhelgi/Projects/Ferr_classifier/data/dataset/raw_img/combined/lewis_structure_diagram/google_000023.png'))
+  #Example usage
+  classifier = Ferritico_classifier('convnext_best_model.pt')
+  print(classifier.classify('data/dataset/raw_img/google/calculus_equation/000001.png'))
+  
